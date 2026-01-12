@@ -145,7 +145,7 @@ function getBook(id) {
 
 // destructuring
 
-const book = getBook(2);
+const book = getBook(3);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -204,3 +204,41 @@ console.log(pages > 1000 ? "over a thousand" : "less then 1000");
 // function expression
 const getYear = (str) => str.split("-")[0];
 console.log(getYear(publicationDate));
+
+// short circuiting and logical operator && || ??
+
+console.log(true && "string");
+console.log(false && "string");
+
+console.log(hasMovieAdaptation && "this book has movie");
+
+// falsy 0 ," null undefined"
+console.log("jhones" && "somesting");
+console.log(0 && "some string");
+
+console.log(true || "string");
+console.log(false || "string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATE";
+spanishTranslation;
+
+console.log(book.reviews.librarything?.reviewsCount);
+const countWrong = book.reviews.librarything?.reviewsCount || "no data";
+countWrong;
+
+// it takes null and undefined as false
+const count = book.reviews.librarything?.reviewsCount ?? "no data";
+count;
+
+// optional chaining
+function getTotalReviewCount(book) {
+  const read = book.reviews.goodreads.reviewsCount;
+  // what if lib get undefined
+  const lib = book.reviews.librarything?.reviewsCount ?? 0;
+
+  return read + lib;
+}
+
+console.log(getTotalReviewCount(book));
