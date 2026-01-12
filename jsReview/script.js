@@ -309,3 +309,27 @@ const sortedByPage = books
   .sort((a, b) => b.pages - a.pages)
   .map((book) => `${book.title} with ${book.pages}`);
 sortedByPage;
+
+// immutable array
+const newBook = {
+  id: 6,
+  title: "kafka on shores",
+  author: "murakami",
+};
+
+// adding the array   spread is used
+const bookAfterAdd = [...books, newBook];
+
+bookAfterAdd;
+
+// deleting the book from array   filter is used
+
+const booksAfterDelete = bookAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+
+// update book object in the array   map is used
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+
+booksAfterUpdate;
