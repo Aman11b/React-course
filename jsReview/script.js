@@ -282,4 +282,30 @@ const adventureBooks = books
 
 adventureBooks;
 
-// reduce method
+// reduce method-> reduce entire array to one value function adn starter value
+const pagesAllBooks = books.reduce(
+  (accumulator, book) => accumulator + book.pages,
+  0
+);
+pagesAllBooks;
+
+// sort method
+
+const y = [13, 5, 7, 9, 0, 3, 2];
+const ascSorted = y.slice().sort((a, b) => a - b);
+
+// asending
+ascSorted;
+
+// decending
+const decSorted = y.slice().sort((a, b) => b - a);
+decSorted;
+
+y;
+// it sorted original array too ,.slice() will create new array to avoid this
+
+const sortedByPage = books
+  .slice()
+  .sort((a, b) => b.pages - a.pages)
+  .map((book) => `${book.title} with ${book.pages}`);
+sortedByPage;
