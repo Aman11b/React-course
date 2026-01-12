@@ -247,6 +247,7 @@ console.log(getTotalReviewCount(book));
 
 // array map method
 
+/*
 function getTotalReviewCount(book) {
   const read = book.reviews?.goodreads?.reviewsCount;
   // what if lib get undefined
@@ -333,3 +334,30 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
 );
 
 booksAfterUpdate;
+
+
+*/
+
+// asynchronous JS:Promise
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jhonas");
+
+// async await
+
+async function getTodos() {
+  // now it will wait untill this is done
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/2");
+  const data = await res.json();
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+
+console.log("donus");
