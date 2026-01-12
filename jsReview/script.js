@@ -182,3 +182,8 @@ const updatedBook = {
   pages: 1210,
 };
 console.log(updatedBook);
+
+// template literals
+
+const summary = `${title} is a book whose author is ${author} and has ${pages} pages`;
+summary;
