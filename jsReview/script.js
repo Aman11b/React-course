@@ -185,5 +185,22 @@ console.log(updatedBook);
 
 // template literals
 
-const summary = `${title} is a book whose author is ${author} and has ${pages} pages`;
+const summary = `${title} is a book whose author is ${author} and has ${pages} pages. The book has ${
+  hasMovieAdaptation ? "" : "not"
+} been adapted as a movie`;
 summary;
+
+//ternary operator
+
+console.log(pages > 1000 ? "over a thousand" : "less then 1000");
+
+// arrow function
+
+// function declaration
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+// function expression
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
