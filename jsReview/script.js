@@ -145,12 +145,12 @@ function getBook(id) {
 
 // destructuring
 
-const books = getBook(2);
+const book = getBook(2);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
-  books;
+  book;
 
-books;
+book;
 title;
 author;
 console.log(pages, publicationDate, hasMovieAdaptation, genres);
@@ -160,6 +160,25 @@ console.log(pages, publicationDate, hasMovieAdaptation, genres);
 // const secondaryGerne = genres[1];
 // console.log(primaryGenre, secondaryGerne);
 
-const [primaryGenre, secondaryGerne] = genres;
+const [primaryGenre, secondaryGerne, ...otherGerne] = genres;
 
 console.log(primaryGenre, secondaryGerne);
+
+// rest/spread operator
+
+console.log(otherGerne);
+// only works at the end tho
+
+// spread operator
+const newGernes = [...genres, "epic fantacy"];
+console.log(newGernes);
+
+// spread operator in object
+const updatedBook = {
+  ...book,
+  // adding new property
+  moviePublicationDate: "2001-12-19",
+  // modifiing previous property
+  pages: 1210,
+};
+console.log(updatedBook);
